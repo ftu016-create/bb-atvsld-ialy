@@ -5,10 +5,7 @@ import {
   Save, 
   PlusCircle, 
   History, 
-  Cloud, 
-  Database,
-  CheckCircle2,
-  ExternalLink
+  CheckCircle2
 } from 'lucide-react';
 import { ReportData } from '../types';
 
@@ -17,8 +14,8 @@ interface HeaderProps {
   onSave: () => void;
   onNew: () => void;
   onOpenHistory: () => void;
-  onOpenVercelGuide: () => void;
-  onOpenBackup: () => void;
+  onOpenVercelGuide?: () => void;
+  onOpenBackup?: () => void;
   onExportDocx: () => void;
   isSaving: boolean;
   activeTab: 'edit' | 'preview';
@@ -30,8 +27,6 @@ export const Header: React.FC<HeaderProps> = ({
   onSave,
   onNew,
   onOpenHistory,
-  onOpenVercelGuide,
-  onOpenBackup,
   onExportDocx,
   isSaving,
   activeTab,
@@ -49,15 +44,9 @@ export const Header: React.FC<HeaderProps> = ({
                 <FileText className="w-5 h-5" />
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <h1 className="font-bold text-slate-900 text-base sm:text-lg leading-tight tracking-tight">
-                    Biên Bản ATVSLĐ
-                  </h1>
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                    <Cloud className="w-3 h-3 text-emerald-600" />
-                    Vercel Ready
-                  </span>
-                </div>
+                <h1 className="font-bold text-slate-900 text-base sm:text-lg leading-tight tracking-tight">
+                  Biên Bản ATVSLĐ
+                </h1>
                 <p className="text-xs text-slate-500 font-medium">
                   Công ty Thủy điện Ialy • Phân xưởng Vận hành
                 </p>
@@ -133,26 +122,6 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <History className="w-4 h-4 text-slate-600" />
               <span className="hidden sm:inline">Kho lưu trữ</span>
-            </button>
-
-            <button
-              id="btn-header-backup"
-              onClick={onOpenBackup}
-              title="Sao lưu hoặc nạp file JSON"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition whitespace-nowrap"
-            >
-              <Database className="w-4 h-4 text-slate-600" />
-              <span className="hidden lg:inline">Sao lưu</span>
-            </button>
-
-            <button
-              id="btn-header-vercel"
-              onClick={onOpenVercelGuide}
-              title="Xem hướng dẫn triển khai lên Vercel"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-slate-900 hover:bg-black rounded-lg transition shadow-xs whitespace-nowrap"
-            >
-              <Cloud className="w-4 h-4 text-emerald-400" />
-              <span>Deploy Vercel</span>
             </button>
 
             <button

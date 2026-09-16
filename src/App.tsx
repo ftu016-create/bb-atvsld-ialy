@@ -223,40 +223,6 @@ export default function App() {
           />
         ) : (
           <div className="space-y-6">
-            {/* Quick Helper Banner */}
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-4 sm:p-5 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                  <Cloud className="w-6 h-6 text-emerald-300" />
-                </div>
-                <div>
-                  <h2 className="font-bold text-sm sm:text-base">
-                    Hệ thống soạn thảo & xuất Biên bản ATVSLĐ Tháng {report.thang_nam}
-                  </h2>
-                  <p className="text-xs text-blue-100">
-                    Phân xưởng Vận hành • NMTĐ Ialy & NMTĐ Ialy Mở Rộng • Sẵn sàng chạy trên Vercel
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-                <button
-                  onClick={() => setActiveTab('preview')}
-                  className="px-3.5 py-1.5 bg-white/15 hover:bg-white/25 rounded-xl text-xs font-semibold backdrop-blur transition flex items-center gap-1.5"
-                >
-                  <Eye className="w-4 h-4" />
-                  <span>Xem bản in A4</span>
-                </button>
-                <button
-                  onClick={() => handleExportDocx(report)}
-                  className="px-4 py-1.5 bg-white text-blue-800 hover:bg-blue-50 rounded-xl text-xs font-bold shadow transition flex items-center gap-1.5"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>Xuất file Word</span>
-                </button>
-              </div>
-            </div>
-
             {/* Step 1: General Info */}
             <ReportMetaForm
               report={report}
